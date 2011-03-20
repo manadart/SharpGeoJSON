@@ -1,4 +1,5 @@
 ﻿// Modified from original Samu Lang source by Joseph Phillips; 2011.
+// Add the specific geometry feature implementations to this file.
 using Newtonsoft.Json;
 
 namespace SharpGeoJSON

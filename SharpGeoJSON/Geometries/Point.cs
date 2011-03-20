@@ -1,7 +1,6 @@
 ﻿// Modified from original Samu Lang source by Joseph Phillips; 2011.
 // The original used lat/lon and flipped the order to preseve the x/y format.
 // This one just uses x and y in order to be coordinate system agnostic.
-
 using System;
 using Newtonsoft.Json;
 
