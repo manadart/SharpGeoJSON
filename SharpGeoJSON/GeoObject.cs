@@ -5,10 +5,10 @@ namespace SharpGeoJSON
 {
     public abstract class GeoObject
     {
-        [JsonConverter(typeof(StringEnumConverter))]
-        [JsonProperty("type")]
         private ObjectType _type;
 
+        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("type")]
         public virtual ObjectType Type 
         {
             get { return _type; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SharpGeoJSON
+namespace SharpGeoJSON.Geometries
 {
     /// <summary>The GeoJSON specification has polygon as an array of linear rings. Hence Double[][][].</summary>
     public class Polygon : Geometry<Double[][][]>
