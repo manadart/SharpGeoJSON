@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Feature.cs" />
     <Compile Include="GeometryCollection.cs" />
     <Compile Include="Geometry.cs" />
     <Compile Include="GeoObject.cs" />
