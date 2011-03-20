@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SharpGeoJSON")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ennoble Consultancy Australia")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SharpGeoJSON")]
-[assembly: AssemblyCopyright("Copyright © Ennoble Consultancy Australia 2011")]
+[assembly: AssemblyCopyright("Copyright © Samu Lang 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
