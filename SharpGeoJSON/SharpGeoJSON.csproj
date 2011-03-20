@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Geometry.cs" />
     <Compile Include="GeoObject.cs" />
     <Compile Include="ObjectType.cs" />
     <Compile Include="Polygon.cs" />
