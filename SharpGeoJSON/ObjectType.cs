@@ -1,4 +1,5 @@
-﻿namespace SharpGeoJSON
+﻿// Modified from original source by Joseph Phillips; 2011.
+namespace SharpGeoJSON
 {
     public enum ObjectType
     {

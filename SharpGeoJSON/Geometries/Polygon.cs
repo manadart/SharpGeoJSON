@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Modified from original source by Joseph Phillips; 2011.
+using System;
 
 namespace SharpGeoJSON.Geometries
 {

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿// Modified from original source by Joseph Phillips; 2011.
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace SharpGeoJSON
