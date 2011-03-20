@@ -2,7 +2,7 @@
 SharpGeoJSON.NET
 ================
 
-The is an implementation of the GeoJSON.NET open source library.
+This project is a C# implementation of the GeoJSON.NET open source library.
 
 The original can be located here: http://geojsondotnet.codeplex.com/
 
