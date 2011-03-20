@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Feature.cs" />
+    <Compile Include="FeatureCollection.cs" />
     <Compile Include="GeometryCollection.cs" />
     <Compile Include="Geometry.cs" />
     <Compile Include="GeoObject.cs" />
