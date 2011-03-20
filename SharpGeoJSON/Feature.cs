@@ -13,4 +13,7 @@ namespace SharpGeoJSON
 
         public Feature() : base(ObjectType.Feature) { }
     }
+
+    public class PointFeature<T> : Feature<Geometries.Point, T> { }
+    public class PolygonFeature<T> : Feature<Geometries.Polygon, T> { }
 }
