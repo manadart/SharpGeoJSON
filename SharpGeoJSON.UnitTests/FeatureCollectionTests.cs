@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
+using SharpGeoJSON.UnitTests.TestTypes;
 using Xunit;
 using Newtonsoft.Json;
 
@@ -9,69 +7,10 @@ namespace SharpGeoJSON.UnitTests
 {
     public class FeatureCollectionTests
     {
-        private const string CompanyJson = @"
-{	
-	""type"": ""FeatureCollection"",
-	""company_id"": 1,
-	""name"":""acme"",
-	""features"": 
-	[
-		{
-			""fid"":1,
-			""properties"":
-			{
-				""site_id"":10,
-				""address"":""somewhere"",
-				""type"":""office"",
-				""employees"":
-				[
-					{
-						""employee_id"":33,
-						""name"":""Mr. Johnson"",
-						""position"":""Company Man""
-					}
-				]
-			},
-            ""geometry"": 
-            {
-                ""type"": ""Point"",
-                ""coordinates"": [1, 2]
-            }
-		},
-		{
-			""fid"":2,
-			""properties"":
-			{
-				""site_id"":11,
-				""address"":""somewhere else"",
-				""type"":""warehouse"",
-				""employees"":
-				[
-					{
-						""employee_id"":44,
-						""name"":""Ronnie James Dio"",
-						""position"":""Legend""
-					},
-                    {
-						""employee_id"":55,
-						""name"":""Chuck Schuldiner"",
-						""position"":""Godfather""
-					}
-				]
-			},
-            ""geometry"": 
-            {
-                ""type"": ""Point"",
-                ""coordinates"": [3, 4]
-            }
-		}
-    ]
-}";
-
         [Fact]
         public void TestPointFeatureCollection()
         {
-            var collection = JsonConvert.DeserializeObject<CompanySiteCollection>(CompanyJson);
+            var collection = JsonConvert.DeserializeObject<CompanySiteCollection>(TestJson.CompanyJsonPoint);
 
             Assert.Equal(2, collection.Features.Count());
             Assert.Equal(1, collection.CompanyId);
@@ -102,47 +41,34 @@ namespace SharpGeoJSON.UnitTests
             Assert.Equal("Chuck Schuldiner", collection.Features[1].Properties.Employees[1].Name);
             Assert.Equal("Godfather", collection.Features[1].Properties.Employees[1].Position);
         }
-    }
 
-    public class CompanySiteCollection : FeatureCollection<CompanySite>
-    {
-        [JsonProperty("company_id")]
-        public int CompanyId { get; set; }
+        [Fact]
+        public void TestLineFeatureCollection()
+        {
+            var collection = JsonConvert.DeserializeObject<StreetCollection>(TestJson.StreetJsonLine);
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
-    }
+            Assert.Equal(1, collection.Features.Count());
+            Assert.Equal(1, collection.CollectionId);
+            Assert.Equal("Sealed Roads", collection.Name);
 
-    public class CompanySite : PointFeature<SiteProperties>
-    {
-        [JsonProperty("fid")]
-        public int FeatureId { get; set; }
-    }
+            Assert.Equal(666, collection.Features[0].FeatureId);
+            Assert.Equal("High Street", collection.Features[0].Properties.Name);
+            Assert.Equal("Northcote", collection.Features[0].Properties.Suburb);
+            Assert.Equal("Victoria", collection.Features[0].Properties.State);
+            Assert.Equal("3070", collection.Features[0].Properties.PostCode);
+            Assert.Equal(4, collection.Features[0].Geometry.Coordinates.Count());
 
-    public class SiteProperties
-    {
-        [JsonProperty("site_id")]
-        public int SiteId { get; set; }
+            Assert.Equal(0, collection.Features[0].Geometry.Coordinates[0][0]);
+            Assert.Equal(0, collection.Features[0].Geometry.Coordinates[0][1]);
 
-        [JsonProperty("address")]
-        public string Address { get; set; }
+            Assert.Equal(0, collection.Features[0].Geometry.Coordinates[1][0]);
+            Assert.Equal(1, collection.Features[0].Geometry.Coordinates[1][1]);
 
-        [JsonProperty("type")]
-        public string Type { get; set; }
+            Assert.Equal(1, collection.Features[0].Geometry.Coordinates[2][0]);
+            Assert.Equal(1, collection.Features[0].Geometry.Coordinates[2][1]);
 
-        [JsonProperty("employees")]
-        public List<EmployeeProperties> Employees { get; set; }
-    }
-
-    public class EmployeeProperties
-    {
-        [JsonProperty("employee_id")]
-        public int EmployeeId { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("position")]
-        public string Position { get; set; }
+            Assert.Equal(1, collection.Features[0].Geometry.Coordinates[3][0]);
+            Assert.Equal(2, collection.Features[0].Geometry.Coordinates[3][1]);
+        }
     }
 }

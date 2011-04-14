@@ -16,5 +16,6 @@ namespace SharpGeoJSON
     }
 
     public class PointFeature<T> : Feature<Geometries.Point, T> { }
+    public class LineFeature<T> : Feature<Geometries.Line, T> { }
     public class PolygonFeature<T> : Feature<Geometries.Polygon, T> { }
 }

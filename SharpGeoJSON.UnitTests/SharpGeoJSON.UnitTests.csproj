@@ -48,6 +48,9 @@
   <ItemGroup>
     <Compile Include="FeatureCollectionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestJson.cs" />
+    <Compile Include="TestTypes\CompanySiteCollection.cs" />
+    <Compile Include="TestTypes\StreetCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharpGeoJSON\SharpGeoJSON.csproj">

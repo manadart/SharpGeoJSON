@@ -8,8 +8,8 @@ namespace SharpGeoJSON
         Feature,
         FeatureCollection,
         MultiPoint,
-        LineString,
-        MultiLineString,
+        Line,
+        MultiLine,
         Polygon,
         MultiPolygon,
     }
