@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SharpGeoJSON.Geometries
+namespace SharpGeoJson.Geometries
 {
     public class Line : Geometry<Double[][]>
     {

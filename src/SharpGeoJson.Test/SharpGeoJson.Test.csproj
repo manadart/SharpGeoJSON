@@ -5,13 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{68611F1D-F278-4E84-B5F3-24A2293EB0D9}</ProjectGuid>
-    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{916246A5-C758-45AD-93CA-6ACF952C50D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpGeoJSON.MonoDroid</RootNamespace>
-    <AssemblyName>SharpGeoJSON.MonoDroid</AssemblyName>
+    <RootNamespace>SharpGeoJson.Test</RootNamespace>
+    <AssemblyName>SharpGeoJson.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,46 +34,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json.MonoDroid">
-      <HintPath>..\Lib\Newtonsoft.Json.MonoDroid.dll</HintPath>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.8.7\lib\net35\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="xunit, Version=1.9.1.1600, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\xunit.1.9.1\lib\net20\xunit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SharpGeoJSON\Feature.cs">
-      <Link>Feature.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\FeatureCollection.cs">
-      <Link>FeatureCollection.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\Geometries\Line.cs">
-      <Link>Line.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\Geometries\Point.cs">
-      <Link>Point.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\Geometries\Polygon.cs">
-      <Link>Polygon.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\Geometry.cs">
-      <Link>Geometry.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\GeometryCollection.cs">
-      <Link>GeometryCollection.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\GeoObject.cs">
-      <Link>GeoObject.cs</Link>
-    </Compile>
-    <Compile Include="..\SharpGeoJSON\ObjectType.cs">
-      <Link>ObjectType.cs</Link>
-    </Compile>
+    <Compile Include="DeserialisationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestJson\TestJson.cs" />
+    <Compile Include="TestTypes\CompanySiteCollection.cs" />
+    <Compile Include="TestTypes\StreetCollection.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\SharpGeoJSON\SharpGeoJson.csproj">
+      <Project>{568C3EDD-89C6-495A-AFA3-73B8CDC61D36}</Project>
+      <Name>SharpGeoJson</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

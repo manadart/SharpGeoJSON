@@ -1,11 +1,8 @@
-﻿// Modified from original Samu Lang source by Joseph Phillips; 2011.
-using Newtonsoft.Json;
-
-namespace SharpGeoJSON
+﻿
+namespace SharpGeoJson
 {
     public abstract class Geometry<T> : GeoObject
     {
-        [JsonProperty("coordinates")]
         public T Coordinates { get; set; }
 
         protected Geometry(ObjectType type) : base(type) { }

@@ -1,32 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SharpGeoJSON.UnitTests
+﻿
+namespace SharpGeoJson.Test
 {
     public static class TestJson
     {
-        #region CompanyJsonPoint
-
         public const string CompanyJsonPoint = @"
 {	
 	""type"": ""FeatureCollection"",
-	""company_id"": 1,
+	""companyId"": 1,
 	""name"":""acme"",
 	""features"": 
 	[
 		{
-			""fid"":1,
+			""featureId"":1,
 			""properties"":
 			{
-				""site_id"":10,
+				""siteId"":10,
 				""address"":""somewhere"",
 				""type"":""office"",
 				""employees"":
 				[
 					{
-						""employee_id"":33,
+						""employeeId"":33,
 						""name"":""Mr. Johnson"",
 						""position"":""Company Man""
 					}
@@ -39,21 +33,21 @@ namespace SharpGeoJSON.UnitTests
             }
 		},
 		{
-			""fid"":2,
+			""featureId"":2,
 			""properties"":
 			{
-				""site_id"":11,
+				""siteId"":11,
 				""address"":""somewhere else"",
 				""type"":""warehouse"",
 				""employees"":
 				[
 					{
-						""employee_id"":44,
+						""employeeId"":44,
 						""name"":""Ronnie James Dio"",
 						""position"":""Legend""
 					},
                     {
-						""employee_id"":55,
+						""employeeId"":55,
 						""name"":""Chuck Schuldiner"",
 						""position"":""Godfather""
 					}
@@ -68,25 +62,21 @@ namespace SharpGeoJSON.UnitTests
     ]
 }";
 
-        #endregion
-
-        #region StreetJsonLine
-
         public const string StreetJsonLine = @"
 {	
 	""type"": ""FeatureCollection"",
-	""street_collection_id"": 1,
+	""collectionId"": 1,
 	""name"":""Sealed Roads"",
 	""features"": 
 	[
 		{
-			""fid"":666,
+			""featureId"":666,
 			""properties"":
 			{
-				""street_name"":""High Street"",
+				""name"":""High Street"",
 				""suburb"":""Northcote"",
                 ""state"":""Victoria"",
-				""post_code"":""3070""
+				""postCode"":""3070""
 			},
             ""geometry"": 
             {
@@ -97,6 +87,5 @@ namespace SharpGeoJSON.UnitTests
     ]
 }";
 
-        #endregion
     }
 }

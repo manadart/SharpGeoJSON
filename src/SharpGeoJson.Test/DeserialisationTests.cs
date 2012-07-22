@@ -1,16 +1,15 @@
 ﻿using System.Linq;
-using SharpGeoJSON.UnitTests.TestTypes;
+using ServiceStack.Text;
 using Xunit;
-using Newtonsoft.Json;
 
-namespace SharpGeoJSON.UnitTests
+namespace SharpGeoJson.Test
 {
-    public class FeatureCollectionTests
+    public class DeserialisationTests
     {
         [Fact]
-        public void TestPointFeatureCollection()
+        public void CanDeserialisePointFeatureCollection()
         {
-            var collection = JsonConvert.DeserializeObject<CompanySiteCollection>(TestJson.CompanyJsonPoint);
+            var collection = JsonSerializer.DeserializeFromString<CompanySiteCollection>(TestJson.CompanyJsonPoint);
 
             Assert.Equal(2, collection.Features.Count());
             Assert.Equal(1, collection.CompanyId);
@@ -43,9 +42,9 @@ namespace SharpGeoJSON.UnitTests
         }
 
         [Fact]
-        public void TestLineFeatureCollection()
+        public void CanDeserialiseLineFeatureCollection()
         {
-            var collection = JsonConvert.DeserializeObject<StreetCollection>(TestJson.StreetJsonLine);
+            var collection = JsonSerializer.DeserializeFromString<StreetCollection>(TestJson.StreetJsonLine);
 
             Assert.Equal(1, collection.Features.Count());
             Assert.Equal(1, collection.CollectionId);

@@ -5,14 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{568C3EDD-89C6-495A-AFA3-73B8CDC61D36}</ProjectGuid>
+    <ProjectGuid>{68611F1D-F278-4E84-B5F3-24A2293EB0D9}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpGeoJSON</RootNamespace>
-    <AssemblyName>SharpGeoJSON</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>SharpGeoJSON.MonoDroid</RootNamespace>
+    <AssemblyName>SharpGeoJSON.MonoDroid</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,29 +31,43 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json.Net35">
-      <HintPath>..\Lib\Newtonsoft.Json.Net35.dll</HintPath>
-    </Reference>
+    <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feature.cs" />
-    <Compile Include="FeatureCollection.cs" />
-    <Compile Include="Geometries\Line.cs" />
-    <Compile Include="Geometries\Point.cs" />
-    <Compile Include="GeometryCollection.cs" />
-    <Compile Include="Geometry.cs" />
-    <Compile Include="GeoObject.cs" />
-    <Compile Include="ObjectType.cs" />
-    <Compile Include="Geometries\Polygon.cs" />
+    <Compile Include="..\SharpGeoJSON\Feature.cs">
+      <Link>Feature.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\FeatureCollection.cs">
+      <Link>FeatureCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\Geometries\Line.cs">
+      <Link>Line.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\Geometries\Point.cs">
+      <Link>Point.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\Geometries\Polygon.cs">
+      <Link>Polygon.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\Geometry.cs">
+      <Link>Geometry.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\GeometryCollection.cs">
+      <Link>GeometryCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\GeoObject.cs">
+      <Link>GeoObject.cs</Link>
+    </Compile>
+    <Compile Include="..\SharpGeoJSON\ObjectType.cs">
+      <Link>ObjectType.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

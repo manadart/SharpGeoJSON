@@ -1,5 +1,5 @@
-﻿// Modified from original Samu Lang source by Joseph Phillips; 2011.
-namespace SharpGeoJSON
+﻿
+namespace SharpGeoJson
 {
     public enum ObjectType
     {
@@ -11,6 +11,6 @@ namespace SharpGeoJSON
         Line,
         MultiLine,
         Polygon,
-        MultiPolygon,
+        MultiPolygon
     }
 }

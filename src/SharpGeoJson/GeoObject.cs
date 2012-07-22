@@ -1,15 +1,11 @@
 ﻿// Modified from original Samu Lang source by Joseph Phillips; 2011.
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
-namespace SharpGeoJSON
+namespace SharpGeoJson
 {
     public abstract class GeoObject
     {
         private ObjectType _type;
 
-        [JsonConverter(typeof(StringEnumConverter))]
-        [JsonProperty("type")]
         public virtual ObjectType Type 
         {
             get { return _type; }
