@@ -1,5 +1,5 @@
 
-# SharpGeoJSON.NET #
+# SharpGeoJson.NET #
 
 This project is a C# implementation of the GeoJSON.NET open source library.
 
